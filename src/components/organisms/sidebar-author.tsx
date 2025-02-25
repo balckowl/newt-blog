@@ -26,7 +26,7 @@ export default function SidebarAuthor({ name, image, icon, title, desc }: Props)
         <h3 className="text-center mb-[10px] font-bold px-3">
           {name}
         </h3>
-        <p className="text-center text-[0.8rem] text-[#aaa] px-3">
+        <p className="text-center text-[0.8rem] text-gray-500 px-3">
           {desc}
         </p>
       </div>

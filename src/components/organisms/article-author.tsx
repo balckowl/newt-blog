@@ -13,7 +13,7 @@ export default function ArticleAuthor({ name, image, desc }: Props) {
         <Image width={85} height={85} src={image} alt="作者" className="size-[85px] rounded-full mx-auto mb-[10px] border" />
         <p className="text-[1rem] font-bold text-center">{name}</p>
       </div>
-      <p className="md:w-[75%] w-full text-[#aaa] md:text-start text-center">
+      <p className="md:w-[75%] w-full text-gray-500 md:text-start text-center">
         {desc}
       </p>
     </div>

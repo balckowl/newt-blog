@@ -144,11 +144,11 @@ export default async function Page({ params }: Props) {
                                 {article.title}
                             </h1>
                             <div className="flex gap-3 justify-end mb-[10px]">
-                                <time className="flex items-center gap-2 text-gray-400 text-[0.9rem] font-bold">
-                                    <FontAwesomeIcon icon={faClock} className="size-3" /> {createdAt}
+                                <time dateTime={createdAt} className="flex items-center gap-2 text-gray-500 text-[0.9rem] font-bold">
+                                    <FontAwesomeIcon icon={faClock} className="size-3 text-gray-500" /> {createdAt}
                                 </time>
-                                {createdAt !== updatedAt && <time className="flex items-center gap-2 text-gray-400 font-bold text-[0.9rem]">
-                                    <FontAwesomeIcon icon={faArrowsRotate} className="size-3" /> {updatedAt}
+                                {createdAt !== updatedAt && <time dateTime={updatedAt} className="flex items-center gap-2 text-gray-500 font-bold text-[0.9rem]">
+                                    <FontAwesomeIcon icon={faArrowsRotate} className="size-3 text-gray-500" /> {updatedAt}
                                 </time>}
                             </div>
                             <Image alt="" width={400} height={300} src={article.coverImage.src} className="w-full rounded-md mb-[25px]" />

@@ -10,7 +10,7 @@ type Props = {
   topicSlug: string;
 }
 
-export default function  ArticleCard({article, topicSlug}: Props) {
+export default function ArticleCard({ article, topicSlug }: Props) {
 
 
   const createdAt = format(article._sys.createdAt, "yyyy/MM/dd");
@@ -19,16 +19,25 @@ export default function  ArticleCard({article, topicSlug}: Props) {
   return (
     <Link key={article._id} href={`/${topicSlug}/${article.category.slug}/${article.slug}`} className='bg-white p-3 rounded-md'>
       <div className='relative'>
-        <Image width={400} height={300} alt="" src={article.coverImage.src} className='w-full rounded-md mb-[0.5rem]' />
+        <Image
+          width={400}
+          height={300}
+          alt={`${article.title}のサムネイル画像`}
+          src={article.coverImage.src}
+          className='w-full rounded-md mb-[0.5rem]'
+        />
         <div className="absolute text-[0.7rem] font-bold px-2 text-white top-1 left-1 z-10 bg-[#3D3D3D] rounded-full">
           {article.category.name}
         </div>
       </div>
-      <time className='flex gap-2 items-center text-[0.8rem] mb-[8px] text-gray-400 font-bold'>
-        {createdAt === updateAt &&<FontAwesomeIcon icon={faClock} className='size-[11px] text-gray-400' />}
-        {createdAt !== updateAt &&<FontAwesomeIcon icon={faArrowsRotate} className='size-[11px] text-gray-400' />}
+      {createdAt === updateAt && <time dateTime={createdAt} className='flex gap-2 items-center text-[0.8rem] mb-[8px] text-gray-500 font-bold'>
+        <FontAwesomeIcon icon={faClock} className='size-[11px] text-gray-500' />
+        {createdAt}
+      </time>}
+      {createdAt !== updateAt && <time dateTime={updateAt} className='flex gap-2 items-center text-[0.8rem] mb-[8px] text-gray-500 font-bold'>
+        <FontAwesomeIcon icon={faArrowsRotate} className='size-[11px] text-gray-500' />
         {updateAt}
-      </time>
+      </time>}
       <h2 className='font-bold text-[1.1rem]'>{article.title}</h2>
     </Link>
   );
