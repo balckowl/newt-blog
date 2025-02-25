@@ -1,0 +1,94 @@
+.post :is(h1, h2, h3, h4, h5, h6):first-child {
+  margin-top: 0;
+}
+
+.post>details> :is(h1, h2, h3, h4, h5, h6):first-of-type {
+  margin-top: 0;
+}
+
+.post h1 {
+  font-size: 1.5rem;
+  padding-bottom: 0.5rem;
+  margin-top: 3.0rem;
+  margin-bottom: 1rem;
+  color: #333;
+  font-weight: 600;
+  border-bottom: 1px solid #eee;
+}
+
+.post h2 {
+  font-size: 1.3rem;
+  padding-bottom: 0.5rem;
+  margin-top: 3.0rem;
+  margin-bottom: 1rem;
+  color: #333;
+  font-weight: 600;
+  border-bottom: 1px solid #eee;
+}
+
+.post h3 {
+  font-size: 1.1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.post p {
+  line-height: 1.9;
+  margin-bottom: 2.0rem;
+  color: #333;
+}
+
+.post ul {
+  margin-bottom: 2.0rem;
+  list-style-type: disc;
+  list-style-position: inside;
+}
+
+.post ol {
+  margin-bottom: 2.0rem;
+  list-style-type: decimal;
+  list-style-position: inside;
+}
+
+.post li {
+  margin-bottom: 0.4rem;
+}
+
+.post pre {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 0 7px 7px 7px;
+  width: 100%;
+  border-radius: 7px;
+}
+
+.post pre>code {
+  border-radius: 5px;
+}
+
+.post code:not(pre code) {
+  background-color: #f5f5f5;
+  color: #fe5e5e;
+  padding: 0.2em 0.4em;
+  font-size: 0.85rem;
+  border-radius: 3px;
+}
+
+.post figure {
+  position: relative;
+}
+
+.post figcaption {
+  background-color: #333;
+  width: max-content;
+  color: white;
+  padding: 0.15rem 0.6rem;
+  font-size: 0.8rem;
+  position: absolute;
+  right: 0;
+  top:0;
+  z-index: 100;
+  border-radius: 0 7px 0 7px;
+}

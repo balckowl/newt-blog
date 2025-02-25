@@ -19,3 +19,318 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.toc-list-item {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.toc-link {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 0.2rem
+}
+
+.toc-link {
+  color: #aaa;
+  /* gray-900 */
+  font-size: 0.9rem;
+  /* text-sm */
+}
+
+.toc-link.is-active {
+  font-weight: 600;
+  color: black;
+}
+
+.toc-link::before {
+  content: "";
+  position: absolute;
+  left: -1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0.50rem;
+  /* w-3 */
+  height: 0.50rem;
+  /* h-3 */
+  border-radius: 50%;
+  /* border: 2px solid #d1d5db;  */
+  background-color: #d1d5db;
+  transition:
+    background-color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out;
+  z-index: 1;
+  /* 丸を線の上に表示 */
+}
+
+.toc-link.is-active::before {
+  background-color: #ffac32;
+  /* primary */
+  border-color: #ffac32;
+  /* primary */
+  /* border: 2px solid #d1d5db;  */
+}
+
+/* 丸と丸を繋ぐ線 */
+.toc-list-item::after {
+  content: "";
+  position: absolute;
+  left: calc(0.25rem - 1px);
+  /* 丸の中心に合わせる */
+  top: 0.50rem;
+  /* 現在の丸の中心から */
+  bottom: -0.50rem;
+  /* 次の丸の上端まで */
+  width: 2px;
+  background-color: #d1d5db;
+  /* gray-300 */
+}
+
+/* 最後のアイテムの線を非表示 */
+.toc-list-item:last-child::after {
+  display: none;
+}
+
+/*スピーチバルーン*/
+.speech-bubble-l {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-block: 25px;
+}
+
+.speech-bubble-r {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  gap: 10px;
+  margin-block: 25px;
+}
+
+.icon {
+  flex-shrink: 0;
+}
+
+.icon img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-bottom: 5px;
+  margin-inline: auto;
+  border: 1px solid #ccc;
+}
+
+.icon .name {
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-align: center;
+  margin: 0;
+}
+
+.speech-bubble-r .bubble {
+  position: relative;
+  display: inline-block;
+  margin-right: 16px;
+  padding: 16px;
+  border: 2px solid #E09F3E;
+  border-radius: 12px;
+  background-color: #ffffff;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #000000;
+}
+
+.speech-bubble-r .bubble::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  border-style: solid;
+  border-width: 0 0 16px 16px;
+  border-color: transparent transparent transparent #E09F3E;
+  translate: 100% -50%;
+  transform: skew(0, -10deg);
+  transform-origin: left;
+}
+
+.speech-bubble-r .bubble::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  border-style: solid;
+  border-width: 0 0 11.2px 11.2px;
+  border-color: transparent transparent transparent #ffffff;
+  translate: 100% calc(-50% - 0.4px);
+  transform: skew(0, -10deg);
+  transform-origin: left;
+}
+
+.speech-bubble-l .bubble {
+  position: relative;
+  display: inline-block;
+  margin-left: 16px;
+  padding: 16px;
+  border: 2px solid #000000;
+  border-radius: 12px;
+  background-color: #ffffff;
+  text-align: left;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #000000;
+}
+
+.bubble>p {
+  margin-bottom: 0px !important;
+}
+
+.speech-bubble-l .bubble::before {
+  content: "";
+  position: absolute;
+  top: 40%;
+  left: 0;
+  border-style: solid;
+  border-width: 0 16px 16px 0;
+  border-color: transparent #000000 transparent transparent;
+  translate: -100% -50%;
+  transform: skew(0, -10deg);
+  transform-origin: right;
+}
+
+.speech-bubble-l .bubble::after {
+  content: "";
+  position: absolute;
+  top: 40%;
+  left: 0;
+  border-style: solid;
+  border-width: 0 11.2px 11.2px 0;
+  border-color: transparent #ffffff transparent transparent;
+  translate: -100% calc(-50% - 0.4px);
+  transform: skew(0, -10deg);
+  transform-origin: right;
+}
+
+.custom-content {
+  padding-top: 0.8rem;
+  padding-inline: 1.3rem;
+}
+
+.custom-details {
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 1rem;
+  border: 1px solid #eee;
+}
+
+details:not([open]) summary {
+  border-bottom: none;
+}
+
+/* details が開いている場合（open 属性がある場合） */
+details[open] summary {
+  border-bottom: 1px solid #eee;
+  background-color: #3d3d3d;
+  color: white;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+details summary {
+  padding: 1rem;
+  cursor: pointer;
+}
+
+
+.link-card {
+  border: 1px solid #e2e8f0;
+  margin-bottom: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.link-card-title {
+  margin-block: 0px !important;
+  font-weight: 600;
+  color: black !important;
+  line-height: 1.5 !important;
+}
+
+.link-card-description {
+  margin-block: 0px !important;
+}
+
+.link-card-description {
+  color: #bbb !important;
+  font-size: 0.8rem;
+}
+
+.link-card-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.link-card-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.8rem;
+}
+
+.link-card-image {
+  order: 2;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.link-card-link {
+  margin-bottom: 0px !important;
+  font-size: 0.8rem !important;
+  color: #bbb !important;
+}
+
+.link-card-title,
+.link-card-description,
+.link-card-link {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  /* 表示する行数 */
+  word-wrap: break-word;
+  /* 長い単語を折り返す */
+  overflow-wrap: break-word;
+  /* 長い単語を折り返す（モダンなプロパティ） */
+}
+
+.link-card-title {
+  -webkit-line-clamp: 2;
+}
+
+.mark {
+  background: linear-gradient(transparent 50%, yellow 50%);
+  font-weight: 600;
+}
+
+body {
+  font-size: 16px;
+}
+
+@media screen and (max-width: 400px) {
+  body {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 640px) {
+  .speech-bubble {
+    align-items: center;
+  }
+
+  .link-card-image {
+    height: auto;
+    width: 100px;
+  }
+}
