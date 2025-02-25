@@ -22,9 +22,10 @@ export default function ArticleCard({ article, topicSlug }: Props) {
         <Image
           width={400}
           height={300}
-          alt={`${article.title}のサムネイル画像`}
+          alt={`${article.title}のサムネイル画像が表示されています`}
           src={article.coverImage.src}
           className='w-full rounded-md mb-[0.5rem]'
+          priority={true}
         />
         <div className="absolute text-[0.7rem] font-bold px-2 text-white top-1 left-1 z-10 bg-[#3D3D3D] rounded-full">
           {article.category.name}
