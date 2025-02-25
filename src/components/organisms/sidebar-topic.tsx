@@ -7,16 +7,18 @@ type Props = {
   icon: IconDefinition;
   title: string;
   topics: Topic[];
-}
+};
 
 export default function SidebarTopic({ icon, title, topics }: Props) {
   return (
     <Sidebar icon={icon} title={title}>
       <ul>
         {topics.map((topic) => (
-          <Link href={`/${topic.slug}/page/1`} key={topic.name}>
-            <li className="p-3 border-b">{topic.name}</li>
-          </Link>
+          <li key={topic.name} className="p-3 border-b">
+            <Link href={`/${topic.slug}/page/1`} className="block w-full h-full">
+              {topic.name}
+            </Link>
+          </li>
         ))}
       </ul>
     </Sidebar>
