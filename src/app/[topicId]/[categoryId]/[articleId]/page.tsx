@@ -9,7 +9,6 @@ import styles from "./article.module.css";
 import TableOfContents from "@/components/organisms/table-of-contents";
 import { format } from "date-fns"
 import Breadthumb from "@/components/molecules/breadthumb";
-import { faBluesky, faXTwitter } from "@fortawesome/free-brands-svg-icons";
 import ArticleAuthor from "@/components/organisms/article-author";
 import Link from "next/link";
 import Image from "next/image";
