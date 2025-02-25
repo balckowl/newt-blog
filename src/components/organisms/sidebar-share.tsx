@@ -1,9 +1,5 @@
 import { faShare } from "@fortawesome/free-solid-svg-icons";
 import Sidebar from "../molecules/sidebar";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBluesky, faXTwitter } from "@fortawesome/free-brands-svg-icons";
-import Image from "next/image";
-import Link from "next/link";
 import { Article, Topic } from "@/types/article";
 import SnsList from "./sns-list";
 
