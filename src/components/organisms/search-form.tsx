@@ -101,6 +101,11 @@ export default function SearchPage() {
         onChange={handleInputChange}
         onKeyDown={handleKeyDown}
       />
+      {query && (
+        <div className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm">
+          Enterで検索
+        </div>
+      )}
       <div id="results" className="mt-2 absolute z-50 bg-white w-full shadow-md rounded-md">
         {searched && results.length === 0 &&
           <div className="text-gray-500 font-bold text-sm h-[80px] rounded-md shadow-md grid place-content-center">
