@@ -76,8 +76,8 @@ export default function TopicTemplate({
             </div>
 
           </div>
-          <div className='lg:w-[300px] flex flex-col w-full gap-4 mb-4'>
-            <div className="lg:order-1 order-3">
+          <aside className='lg:w-[300px] flex flex-col w-full gap-4 mb-4'>
+            <nav className="lg:order-1 order-3">
               <SidebarAuthor
                 desc={authorDesc}
                 icon={faAt}
@@ -85,14 +85,14 @@ export default function TopicTemplate({
                 name={authorName}
                 image={authorSrc}
               />
-            </div>
+            </nav>
             <div className="lg:order-1 order-2">
               <SearchPage />
             </div>
-            <div className="lg:order-2 order-3">
+            <section className="lg:order-2 order-3">
               <SidebarCategory icon={faList} title={categoryTitle} categories={categories} />
-            </div>
-          </div>
+            </section>
+          </aside>
         </div>
       </Container>
     </div>

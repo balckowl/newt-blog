@@ -39,7 +39,7 @@ export default function RootLayout({
         className={`${notoSansJp.variable} antialiased`}
       >
         <Header />
-        {children}
+        <main>{children}</main>
         <Footer />
       </body>
     </html>

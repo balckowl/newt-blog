@@ -44,28 +44,28 @@ export default function Pagination({ totalPages, currentPage, segment }: Paginat
   const pageNumbers = generatePageNumbers();
 
   return (
-    <div className="pagination flex items-center gap-2">
+    <nav aria-label="pagination" className="pagination flex items-center gap-2">
       {currentPage > 1 && (
-        <Link href={currentPage === 2 ? `/` : `/${segment}/page/${currentPage - 1}`}>
+        <Link rel="prev" href={currentPage === 2 ? `/` : `/${segment}/page/${currentPage - 1}`}>
           <FontAwesomeIcon icon={faChevronLeft} className="size-3"/>
         </Link>
       )}
 
       {pageNumbers.map((page, index) =>
         typeof page === "number" ? (
-          <Link className={`${page === currentPage ? "bg-[#3D3D3D] text-white" : "hover:bg-gray-300"} font-bold w-11 h-11 rounded-full grid place-content-center`} key={index} href={page === 1 ? `/` : `${segment}/${page}`}>
+          <Link aria-label={`page ${page}`} className={`${page === currentPage ? "bg-[#3D3D3D] text-white" : "hover:bg-gray-300"} font-bold w-11 h-11 rounded-full grid place-content-center`} key={index} href={page === 1 ? `/` : `${segment}/${page}`}>
             <button disabled={page === currentPage}>{page}</button>
           </Link>
         ) : (
-          <span key={index}>…</span>
+          <span aria-hidden="true" key={index}>…</span>
         )
       )}
 
       {currentPage < totalPages && (
-        <Link href={`${segment}/${currentPage + 1}`}>
+        <Link rel="next" href={`${segment}/${currentPage + 1}`}>
           <FontAwesomeIcon icon={faChevronRight} className="size-3"/>
         </Link>
       )}
-    </div>
+    </nav>
   );
 }

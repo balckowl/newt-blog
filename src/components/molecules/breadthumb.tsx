@@ -13,15 +13,17 @@ type Item = {
 
 export default function Breadthumb({ items }: Props) {
   return (
-    <div className="flex gap-2 items-center">
-      {items.map((item) => (
-        <div className="flex gap-2 items-center" key={item.name}>
-          <Link href={`/${item.slug}`} className="text-[0.8rem] hover:underline hover:decoration-1">
-            {item.name}
-          </Link>
-          <FontAwesomeIcon icon={faChevronRight} className="size-2" />
-        </div>
-      ))}
-    </div>
+    <nav aria-label="breadcrumb">
+      <ul className="flex gap-2 items-center">
+        {items.map((item) => (
+          <li className="flex gap-2 items-center" key={item.name}>
+            <Link href={`/${item.slug}`} className="text-[0.8rem] hover:underline hover:decoration-1">
+              {item.name}
+            </Link>
+            <FontAwesomeIcon icon={faChevronRight} className="size-2" />
+          </li>
+        ))}
+      </ul>
+    </nav>
   );
 }

@@ -59,8 +59,8 @@ export default function TopTemplate({
                         </div>
                     </div>
 
-                    <div className='lg:w-[300px] flex flex-col w-full gap-4 mb-4'>
-                        <div className="lg:order-1 order-2">
+                    <aside className='lg:w-[300px] flex flex-col w-full gap-4 mb-4'>
+                        <nav className="lg:order-1 order-2">
                             <SidebarAuthor
                                 desc={adminDesc}
                                 icon={faAt}
@@ -68,15 +68,15 @@ export default function TopTemplate({
                                 name={adminName}
                                 image={adminImage}
                             />
-                        </div>
-                        <div className="lg:order-2 order-1">
+                        </nav>
+                        <section className="lg:order-2 order-1">
                             <SidebarTopic
                                 icon={faFire}
                                 title='トピック'
                                 topics={topics}
                             />
-                        </div>
-                    </div>
+                        </section>
+                    </aside>
                 </div>
             </Container>
         </div>
