@@ -151,7 +151,7 @@ export default async function Page({ params }: Props) {
                                     <FontAwesomeIcon icon={faArrowsRotate} className="size-3 text-gray-500" /> {updatedAt}
                                 </time>}
                             </div>
-                            <Image priority={true} alt={`${article.title}のサムネイル画像が表示されています`} width={400} height={300} src={article.coverImage.src} className="w-full rounded-md mb-[25px]" />
+                            <Image priority={true} alt={`${article.title}のサムネイル画像が表示されています`} width={1200} height={630} src={article.coverImage.src} className="w-full rounded-md mb-[25px]" />
                             <div dangerouslySetInnerHTML={{ __html: html }} id="content" className={`${styles.post} min-h-[300px]`} />
 
 

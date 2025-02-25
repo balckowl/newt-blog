@@ -20,8 +20,8 @@ export default function ArticleCard({ article, topicSlug }: Props) {
     <Link key={article._id} href={`/${topicSlug}/${article.category.slug}/${article.slug}`} className='bg-white p-3 rounded-md'>
       <div className='relative'>
         <Image
-          width={400}
-          height={300}
+          width={1200}
+          height={630}
           alt={`${article.title}のサムネイル画像が表示されています`}
           src={article.coverImage.src}
           className='w-full rounded-md mb-[0.5rem]'
