@@ -14,6 +14,7 @@ import ArticleAuthor from "@/components/organisms/article-author";
 import Link from "next/link";
 import Image from "next/image";
 import { Metadata, ResolvingMetadata } from "next";
+import SnsList from "@/components/organisms/sns-list";
 
 type Props = {
     params: Promise<{ articleId: string }>
@@ -157,7 +158,7 @@ export default async function Page({ params }: Props) {
 
                             <div className="pt-[50px]">
                                 <h2 className="font-semibold py-2 text-[1.3rem] mb-[1rem] border-b justify-center flex gap-2 items-center">
-                                    <FontAwesomeIcon icon={faNewspaper} className="size-[20px]"/>
+                                    <FontAwesomeIcon icon={faNewspaper} className="size-[20px]" />
                                     関連記事
                                 </h2>
                                 <div className="grid md:grid-cols-2 grid-cols-1 gap-6">
@@ -170,20 +171,8 @@ export default async function Page({ params }: Props) {
                                 </div>
                             </div>
 
-                            <div className="flex justify-center items-center gap-2">
-                                <div className="my-[2rem] flex justify-center gap-2">
-                                    <Link href="/" className="size-10 flex gap-2 items-center justify-center bg-black font-bold  text-white rounded-md">
-                                        <FontAwesomeIcon icon={faXTwitter} />
-                                    </Link>
-
-                                    <Link href="/" className="size-10 flex gap-2 items-center justify-center bg-[#1185fe] font-bold  text-white rounded-md">
-                                        <FontAwesomeIcon icon={faBluesky} />
-                                    </Link>
-
-                                    <Link href="/" className="size-10 flex gap-2 items-center justify-center border bg-white font-bold  text-white rounded-md">
-                                        <Image width={300} height={200} src="/taittsuu.png" className="size-[27px]" alt="" />
-                                    </Link>
-                                </div>
+                            <div className="flex justify-center items-center gap-2 my-[2rem]">
+                                <SnsList article={article} topic={topic}/>
                                 <p>でシェア</p>
                             </div>
 
@@ -204,7 +193,7 @@ export default async function Page({ params }: Props) {
                             title='この記事を書いた人'
                         />
                         <div className="sticky top-3 left-0 space-y-4">
-                            <SidebarShare />
+                            <SidebarShare article={article} topic={topic} />
                             <TableOfContents />
                         </div>
                     </div>
