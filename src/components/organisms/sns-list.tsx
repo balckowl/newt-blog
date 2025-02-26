@@ -16,6 +16,7 @@ export default function SnsList({ article, topic }: Props) {
         href={`https://x.com/intent/tweet?text=${article.title}&url=${process.env.SITE_URL}/${topic!.slug}/${article.category.slug}/${article.slug}`}
         className="size-[40px] bg-black grid place-content-center rounded-[10px] border hover:translate-y-[-5px] transition-transform duration-300"
         target="_blank"
+        aria-label={`${article.title} をXでシェア`}
       >
         <FontAwesomeIcon
           icon={faXTwitter}
@@ -26,6 +27,7 @@ export default function SnsList({ article, topic }: Props) {
         href={`https://bsky.app/intent/compose?text=${article.title} + ${process.env.SITE_URL}/${topic!.slug}/${article.category.slug}/${article.slug}`}
         className="size-[40px] grid place-content-center rounded-[10px] border bg-[#1185fe] hover:translate-y-[-5px] transition-transform duration-300"
         target="_blank"
+        aria-label={`${article.title} をブルースカイでシェア`}
       >
         <FontAwesomeIcon
           icon={faBluesky}

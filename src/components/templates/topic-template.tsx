@@ -46,14 +46,14 @@ export default function TopicTemplate({
   return (
     <div className="bg-[#D8E2DC] min-h-[calc(100vh-70px)] pt-5">
       <Container>
-        <div className='flex lg:flex-row flex-col md:gap-5'>
+        <div className='flex lg:flex-row flex-col lg:gap-5'>
           <div className='lg:w-[75%] w-full'>
             <TopicCard
               breadthumbList={breadthumbList}
               title={topicTitle}
               desc={topicDesc}
             />
-            <div className="grid md:grid-cols-2 gap-3">
+            <div className="grid sm:grid-cols-2 gap-3">
               {articles.map(async (article) => {
 
                 const topic = await getTopic({
